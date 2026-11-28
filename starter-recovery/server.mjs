@@ -98,7 +98,7 @@ const lessonInstructions=TUTOR_PROMPT+`\nSTAGE ${course}, DAY ${day}, GAME ${tod
 const payload={
 expires_after:{anchor:'created_at',seconds:60},
 session:{type:'realtime',model:MODEL,output_modalities:['audio'],instructions:lessonInstructions,max_output_tokens:"inf",
-audio:{input:{noise_reduction:{type:'near_field'},transcription:{model:'gpt-4o-transcribe',language:'en'},turn_detection:{type:'server_vad',threshold:0.40,prefix_padding_ms:400,silence_duration_ms:650,create_response:false,interrupt_response:false}},
+audio:{input:{noise_reduction:{type:'near_field'},transcription:{model:'gpt-4o-transcribe',language:'en'},turn_detection:{type:'semantic_vad',eagerness:'low',create_response:false,interrupt_response:false}},
 output:{voice:VOICE,speed:0.88}}
 }
 };
